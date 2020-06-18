@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!-- D3.js -->
+	<script src="https://d3js.org/d3.v5.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.min.js"></script>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel='stylesheet' type='text/css'>
+	
+	<script src="weatherBoston.js"></script>
+	
+	<style>
+		
+		#container {
+        height: 100px;
+        width: 100px;
+        background-color: black;
+    }
+		/* The navigation menu */
+.navbar {
+  overflow: hidden;
+  background-color:rgb(0, 0, 255);
+}
+
+/* Navigation links */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The subnavigation menu */
+.subnav {
+  float: left;
+  overflow: hidden;
+}
+
+/* Subnav button */
+.subnav .subnavbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* Add a red background color to navigation links on hover */
+.navbar a:hover, .subnav:hover .subnavbtn {
+  background-color:green;
+}
+
+/* Style the subnav content - positioned absolute */
+.subnav-content {
+  display: none;
+  position: absolute;
+  left: 0;
+  background-color:green;
+  width: 100%;
+  z-index: 1;
+}
+
+/* Style the subnav links */
+.subnav-content a {
+  float: left;
+  color: white;
+  text-decoration: none;
+}
+
+/* Add a grey background color on hover */
+.subnav-content a:hover {
+  background-color: #eee;
+  color: black;
+}
+
+/* When you move the mouse over the subnav container, open the subnav content */
+.subnav:hover .subnav-content {
+  display: block;
+}
+
+		body {
+		  	font-size: 10px;
+		  	font-family: 'Open Sans', sans-serif;
+		  	font-weight: 400;
+		  	fill: #8C8C8C;
+		  	text-align: center;
+		}
+
+	  	.title {
+	    	font-size: 28px;
+	    	fill: #4F4F4F;
+	    	font-weight: 300;
+	    	text-anchor: start;
+	  	}
+
+	  	.subtitle {
+	    	font-size: 14px;
+	    	fill: #AAAAAA;
+	    	font-weight: 300;
+	    	text-anchor: start;
+	  	}
+	  
+	  	.credit {
+	    	font-size: 12px;
+	    	fill: #AAAAAA;
+	    	font-weight: 300;
+	    	text-anchor: start;
+	  	}
+
+	  	.axis path,
+	  	.axis tick,
+	  	.axis line {
+	      	fill: none;
+	      	stroke: none;
+	  	}
+
+	  	.axis text {
+	      	font-size: 12px;
+	      	fill: #AAAAAA;
+	      	font-weight: 400;
+	  	}
+
+	  	.legendTitle {
+	      	font-size: 14px;
+	      	fill: #4F4F4F;
+	      	font-weight: 300;
+	  	}
+
+	  	.january {
+	  		font-size: 14px;
+	  		text-anchor: start;
+	  		font-weight: 300;
+	  		fill: #AAAAAA;
+	  	}
+
+	  	.yearLine {
+	  		stroke: #AAAAAA;
+	  	}
+
+	  	.axisText {
+	  		fill: #C4C4C4;
+	  		font-size: 11px;
+	  		font-weight: 300;
+	  		text-anchor: middle;
+	  		text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+	  	}
+
+	  	.axisCircles {
+	  		fill: none;
+	  		stroke: #E8E8E8;
+	  		stroke-width: 1px;
+	  	}
+		  .display-4{
+			  color:black;
+		  }
+		  .container{
+			  color:black;
+			  background-color:white;
+		  }
+		  .description-header{
+			  color:cornflowerblue;
+			  font-size:x-large;
+		  }
+	</style>
+
+	
+</head>	
+<body>
+	<section>
+		<h1>Climate Change: Factors and Effects</h1>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+		<!-- The navigation menu -->
+		<div class="navbar">
+			<a href="#About">About</a>
+			<a href="#Factor">Factor</a>
+			<a href="#Example">Example</a>
+
+		</div>
+		<article>
+			<!-- <a target="_blank" href="storm.jpg"> -->
+			<!-- <img src="storm.jpg" alt="Extreme Climate Change"> -->
+			</a>
+			<p><em>Our goal is to present some of the factors and effects caused by climate change.</em></p>	  
+		</article>
+  </section>
+	<div class="container">
+		<!-- <div class="jumbotron">  -->
+		  <h1 id ="About" class="display-4">Global Temperature Changes</h1>
+		  <section class = "row">
+			<div class="col-md-12">
+				<article class="description-content">
+					<h1 class="description-header">Technology and the Environment</h1>
+					<hr class="description-hr"/>
+					<p>Technological advancements have made the production of goods and resources easier at the expense of the environment. We should look at temperature averages over thousands of years to get a good sense of temperature trends.</p>
+				  </article>
+				  <a class="btn btn-primary btn-lg" href="https://climate.nasa.gov/evidence" role="button">Learn more</a>
+				  <div id = "global-graph">
+				  </div>
+				</article>
+			</div>
+		</div>
+		<div class = "container">
+			<h2 id="Factor" class="display-4">Nitrous Oxide Emissions</h2>
+		  <section class = "row">
+			<div class="col-md-12">
+				<div id=".countries"></div>
+				<article class="description-content">
+					<h1 class="description-header">Bar chart & Scatter Plot</h1>
+					<hr class="description-hr"/>
+					<p>The bar chart describes the maximum measurement of nitrous oxide emission from 1970 to 2012 for the selected ten countries. We picked the 25th country from a total of 255 countries. The two scatter plots describe nitrous oxide emission level (1970 - 2012) for India and the United States.  </p>
+				</article>
+				<div id="bar-graph">
+						<svg width="960" height="933">
+						</svg>
+				</div>
+				<div id ="scatter">
+				</div>
+				<div id ="scatterplot">
+		
+				</div>
+				<script>
+					d3.select("#countries")
+					.transition()
+					.duration(1000)
+					.style("background-color","red");
+				</script>
+			</div>
+		</div>
+		<div class = "container"></div>
+			<h3 id="Example" class="display-12">Weather is Climate Change</h3>
+		<section class = "row">
+		  <div class="col-md-12 mx-auto">
+			<article class="description-content">
+				<h3 class="description-header">An example of Daily Temperature in One City</h3>
+				<hr class="description-hr"/>
+				<p>This graph uses daily temperature of NYC as an example. If there is any changes of temperature on a daily basis, then it could be an indication of climate change on a global scale. </p>
+			</article>
+		</div> <!-- .col-md-4 -->
+		<div class="col-md-12 mx-auto">
+			<a class="btn btn-primary btn-lg" href="https://www.washingtonpost.com/climate-environment/everyday-weather-is-linked-to-human-caused-climate-change-in-new-study/2020/01/02/de6ae75a-2da1-11ea-9b60-817cc18cf173_story.html" role="button">Enter</a>
+			<div id="weatherRadial">
+			</div>
+		</div>
+		</section> 
+			<script src="weatherNY.js"></script>
+			<script src="nitrousgas.js"></script>
+	<script src="script.js"></script>
+	<script src="script2.js"></script>
+	<script src ="script3.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <!-- Bootstrap CDN -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+</body>
+</html>

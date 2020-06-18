@@ -1,0 +1,22 @@
+{
+  "name": "weatherdata",
+  "version": "1.0.0",
+  "description": "A basic node project that tracks weather data.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/clockwerkz/weatherdata.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/clockwerkz/weatherdata/issues"
+  },
+  "homepage": "https://github.com/clockwerkz/weatherdata#readme",
+  "dependencies": {
+    "neat-csv": "^5.2.0"
+  }
+}
