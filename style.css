@@ -1,0 +1,89 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  width: 1000px;
+  height: 600px;
+  margin: auto;
+  background-color: #fff;
+}
+
+h1 {
+  font-size: 30px;
+  color:black;
+  margin: 25px 25px 10px 25px;
+}
+
+h2 {
+  font-size: 24px;
+  color: black ;
+  margin: 25px 25px 10px 25px;
+}
+
+h3 {
+  font-size: 20px;
+  color: blue;
+  margin: 25px 25px 10px 25px;
+}
+
+
+
+p {
+  font-size: 18px;
+  margin:  25px 25px 10px 25px;
+}
+
+#scatter {
+  margin: 25px;
+}
+
+#scatterplot {
+  margin: 25px;
+}
+
+.btn-primary {
+  margin: 25px;
+  background-color: blue;
+  color: white;
+  border: 1px solid #666;
+  text-decoration: none;
+  padding: 10px;
+  display: block;
+  width: 90px;
+  border-radius: 10px;
+}
+
+.btn-primary:hover {
+  background-color: red;
+}
+
+.navbar {
+  background-color: blue;
+  padding: 10px;
+  margin: 0px 25px;
+}
+
+.navbar a{
+  display: inline-block;
+  color: white; 
+  text-decoration: none;
+  text-align: center;
+  width: 33%;
+}
+
+.navbar a:first-child { 
+  text-align: left;
+  width: 33%;
+}
+
+.navbar a:last-child {
+  text-align: right;
+  width: 33%;
+}
